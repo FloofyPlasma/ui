@@ -6,19 +6,19 @@ View.__index = View
 
 function View:_render()
 	local ViewFrame = LuminUI.New("Frame") {
-        Position = UDim2.fromScale(0.25, 0.25),
-        Size = UDim2.fromScale(0.5, 0.5),
-        BackgroundTransparency = 1,
-        ClipsDescendants = true,
+		Position = UDim2.fromScale(0.25, 0.25),
+		Size = UDim2.fromScale(0.5, 0.5),
+		BackgroundTransparency = 1,
+		ClipsDescendants = true,
 
-        LuminUI.New "UIAspectRatioConstraint" {
-            AspectRatio = 1.8,
-        }
-    }
+		LuminUI.New "UIAspectRatioConstraint" {
+			AspectRatio = 1.8,
+		},
+	}
 
-    for _, Instance in self.Body do
-        Instance:_render().Parent = ViewFrame
-    end
+	for _, Instance in self.Body do
+		Instance:_render().Parent = ViewFrame
+	end
 
 	return ViewFrame
 end
